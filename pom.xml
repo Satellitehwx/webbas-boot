@@ -42,7 +42,7 @@
         <aliyun.oss.version>2.8.3</aliyun.oss.version>
         <qcloud.cos.version>4.4</qcloud.cos.version>
         <joda.time.version>2.9.9</joda.time.version>
-        <hutool.version>4.1.1</hutool.version>
+        <hutool.version>4.1.12</hutool.version>
     </properties>
 
     <dependencies>
