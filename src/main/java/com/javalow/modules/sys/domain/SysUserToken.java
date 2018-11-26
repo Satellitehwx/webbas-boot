@@ -1,5 +1,6 @@
 package com.javalow.modules.sys.domain;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 
 import java.io.Serializable;
@@ -17,6 +18,7 @@ public class SysUserToken extends Model<SysUserToken> {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId
     private Long userId;
 
     /**

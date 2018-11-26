@@ -42,4 +42,12 @@ public class SysUserController extends AbstractController {
 
         return Result.ok().put("page", page);
     }
+
+    /**
+     * 获取登录的用户信息
+     */
+    @GetMapping("/info")
+    public Result info() {
+        return Result.ok().put("user", getUser());
+    }
 }

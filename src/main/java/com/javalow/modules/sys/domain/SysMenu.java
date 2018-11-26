@@ -1,9 +1,12 @@
 package com.javalow.modules.sys.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <p>
@@ -24,6 +27,12 @@ public class SysMenu extends Model<SysMenu> {
      * 父菜单ID，一级菜单为0
      */
     private Long parentId;
+
+    /**
+     * 父菜单名称
+     */
+    @TableField(exist=false)
+    private String parentName;
 
     /**
      * 菜单名称
@@ -54,6 +63,16 @@ public class SysMenu extends Model<SysMenu> {
      * 排序
      */
     private Integer orderNum;
+
+
+    /**
+     * ztree属性
+     */
+    @TableField(exist=false)
+    private Boolean open;
+
+    @TableField(exist=false)
+    private List<?> list;
 
 
     public Long getMenuId() {
@@ -118,6 +137,30 @@ public class SysMenu extends Model<SysMenu> {
 
     public void setOrderNum(Integer orderNum) {
         this.orderNum = orderNum;
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public Boolean getOpen() {
+        return open;
+    }
+
+    public void setOpen(Boolean open) {
+        this.open = open;
+    }
+
+    public List<?> getList() {
+        return list;
+    }
+
+    public void setList(List<?> list) {
+        this.list = list;
     }
 
     @Override
